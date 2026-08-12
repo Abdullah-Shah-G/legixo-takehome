@@ -62,7 +62,8 @@ async def retrieve(state: QAState) -> QAState:
         )
 
     trace = state.get("trace", [])
-    trace.append(f"retrieve(query={'query' if state.get('query') else 'original'}, candidates={len(chunks)})")
+    used = "rewritten" if state.get("query") else "original"
+    trace.append(f"retrieve(query={used}, candidates={len(chunks)})")
     return {
         "chunks": chunks,
         "steps": state.get("steps", 0) + 1,
