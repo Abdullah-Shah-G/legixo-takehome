@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+langchain
+langchain-google-genai
+langchain-text-splitters
+python-dotenv
+pinecone
+pydantic
+httpx
